@@ -6,6 +6,10 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const Result = () => {
   const navigate = useNavigate();
+  const handleClickBtn = () => {
+    navigate('/');
+  };
+
   const [searchParams] = useSearchParams();
   const mbti = searchParams.get('mbti');
   const [resultData, setResultData] = useState({});
@@ -22,6 +26,7 @@ const Result = () => {
         <Title>결과 보기</Title>
         <LogoImage>
           <img
+            alt='고양이 사진'
             src={resultData.image}
             width={350}
             height={350}
@@ -29,7 +34,7 @@ const Result = () => {
           ></img>
         </LogoImage>
         <Desc>예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다.</Desc>
-        <Button>테스트 다시하기</Button>
+        <Button onClick={handleClickBtn}>테스트 다시하기</Button>
       </Content>
     </Wrapper>
   );
