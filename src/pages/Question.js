@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Button, ProgressBar } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 import { QuestionData } from '../assets/data/QuestionData';
 
 function Question() {
@@ -25,7 +25,19 @@ function Question() {
     if (QuestionData.length !== questionNo + 1) {
       setQuestionNo(questionNo + 1);
     } else {
-      navigate('/result');
+      const mbti = newScore.reduce(
+        (acc, curr) =>
+          acc +
+          (curr.score >= 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
+        ''
+      );
+      console.log(mbti);
+      navigate({
+        pathname: '/result',
+        search: `?${createSearchParams({
+          mbti: mbti,
+        })}`,
+      });
     }
   };
 
