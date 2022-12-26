@@ -2,8 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import PangImage from '../assets/ggompang.jpeg';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
+  const handleClickBtn = () => {
+    navigate('/question');
+  };
+
   return (
     <Wrapper>
       <Header>예비집사 판별기</Header>
@@ -18,7 +24,7 @@ function Home() {
           ></img>
         </LogoImage>
         <Desc>MBTI를 기반으로 하는 나랑 잘맞는 고양이 찾기</Desc>
-        <Button>테스트 시작하기</Button>
+        <Button onClick={handleClickBtn}>테스트 시작하기</Button>
       </Content>
     </Wrapper>
   );
@@ -35,6 +41,7 @@ const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'IM_Bold';
 `;
 
 const Content = styled.div`
@@ -42,6 +49,7 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'IM_HyeMin';
 `;
 
 const Title = styled.div`
