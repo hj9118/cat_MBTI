@@ -11,7 +11,7 @@ const KakaoShareButton = () => {
   useEffect(() => {
     Kakao.cleanup();
     Kakao.init("81522c980c69447be9daf07c0155957b")
-    console.log(kakao.isInitialized());
+    console.log(Kakao.isInitialized());
   },[]);
 
 const shareKakao = () => {
