@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import { ResultData } from '../assets/data/ResultData';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import KakaoShareButton from '../component/KakaoShareButton';
 
 const Result = () => {
   const navigate = useNavigate();
@@ -34,7 +35,10 @@ const Result = () => {
           ></img>
         </LogoImage>
         <Desc>예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다.</Desc>
-        <Button onClick={handleClickBtn}>테스트 다시하기</Button>
+        <ButtonGroup>
+          <Button style={{ fontfamliy: 'IM_HyeMin', width: 170 }} onClick={handleClickBtn}>테스트 다시하기</Button>
+          <KakaoShareButton />
+        </ButtonGroup>
       </Content>
     </Wrapper>
   );
@@ -75,4 +79,9 @@ const LogoImage = styled.div`
 const Desc = styled.div`
   font-size: 20pt;
   margin: 20px 0px;
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
