@@ -8,6 +8,7 @@
 }
 
 @font-face {
-  font-family: "IM_Bold";
+  font-family: "IM_HyeMin";
   src: url(/src/assets/font/IM_Hyemin-Bold.ttf);
+  font-weight: bold;
 }

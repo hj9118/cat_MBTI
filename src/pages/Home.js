@@ -42,7 +42,8 @@ const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'IM_Bold';
+  font-family: 'IM_HyeMin';
+  font-weight: bold;
 `;
 
 const Content = styled.div`
