@@ -6,13 +6,16 @@ const KakaoShareButton = () => {
   const url = 'https://oneuleun-cat-mbti.netlify.app'
   const resultUrl = window.location.href
 
+  console.log('url test', resultUrl, url)
+
   useEffect(() => {
     Kakao.cleanup();
     Kakao.init("81522c980c69447be9daf07c0155957b")
+    console.log(kakao.isInitialized());
   },[]);
 
 const shareKakao = () => {
-  Kakao.Share.sendDefault({
+  Kakao.Link.sendDefault({
     objectType: 'feed',
     content: {
       title: '예비집사 판별기 결과',
@@ -21,7 +24,7 @@ const shareKakao = () => {
         'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
       link: {
         mobileWebUrl: 'https://developers.kakao.com',
-        webUrl: 'https://developers.kakao.com',
+        webUrl: 'test',
       },
     },
     
